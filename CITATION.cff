@@ -7,6 +7,7 @@ authors:
     email: nithinvkammara@gmail.com
 title: "Stencil Generator for CAD STL Files"
 version: 1.0.0
+doi: 10.5281/zenodo.18841731
 date-released: 03-02-2026
 url: "https://github.com/nithin5589/Stencil-Generator-for-CAD-STL-files"
 repository-code: "https://github.com/nithin5589/Stencil-Generator-for-CAD-STL-files"
