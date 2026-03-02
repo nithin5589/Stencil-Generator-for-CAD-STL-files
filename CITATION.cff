@@ -1,0 +1,51 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: "Kammara"
+    given-names: "Nithin Veerendranath"
+    affiliation: "Department of Mechanical Engineering, Texas A&M University"
+    email: nithinvkammara@gmail.com
+title: "Stencil Generator for CAD STL Files"
+version: 1.0.0
+date-released: 03-02-2026
+url: "https://github.com/nithin5589/Stencil-Generator-for-CAD-STL-files"
+repository-code: "https://github.com/nithin5589/Stencil-Generator-for-CAD-STL-files"
+license: MIT
+keywords:
+  - stencil generation
+  - STL files
+  - CAD
+  - finite difference
+  - erosion modeling
+  - biodegradable polymers
+  - Fortran
+  - numerical simulation
+abstract: >
+  The advancement in the field of computer-aided design (CAD) and 3D printing 
+  enables the creation of devices and structures with complex geometries and 
+  multiple functionalities. As the complexity of the solid model increases, 
+  generating meshes or grids to perform structural analyses becomes challenging, 
+  resulting in inconsistency in capturing the complex shapes (topology) of the 
+  structures. In this study, we develop a stencil generator approach that enables 
+  easy discretization of structures of complex geometries consistent with the 
+  original solid models and directly solves boundary value problems within coupled 
+  partial differential equations. Thus, we can simultaneously perform the design, 
+  analysis, and fabrication of the structures using the original CAD file. We use 
+  the Stereolithography (.stl) file format to discretize structures. We present 
+  new slicing and sorting algorithms for 2D and 3D complex geometries, for stencil 
+  generations that can capture various surface topologies (e.g., rounded and sharp 
+  surfaces) of the structures. The generated stencil (nodal group) can be readily 
+  implemented within finite-difference methods to numerically solve multi-field 
+  boundary value problems. For a demonstration of the stencil generation and 
+  simulation pipeline, we present two boundary value problems on various complex 
+  geometries with different surface topologies. The first example solves the 
+  Poisson equation, which is relevant for many physical phenomena, such as heat 
+  transfer and diffusion of fluid through solid bodies. The second example 
+  simulates coupled systems of biodegradable polymer solids, which include fluid 
+  diffusion, hydrolytic attack, and erosion processes. The erosion process leads 
+  to a change in the shapes and sizes of the geometries over time.
+preferred-citation:
+  type: article
+  title: "Stencil Generation and Multi-field Simulation Pipeline of 3D Complex Geometries from Stereolithography (STL) Files"
+  journal: "Applications in Engineering Science"
+  year: 2026
