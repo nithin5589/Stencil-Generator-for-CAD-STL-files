@@ -16,12 +16,12 @@ A Fortran-based pipeline tool for generating 3D stencil grid points from STL (3D
 git clone https://github.com/nithin5589/Stencil-Generator-for-CAD-STL-files.git
 cd Stencil-Generator-for-CAD-STL-files
 
-# Compile
-make
-
-# Or compile with a specific compiler
-make FC=gfortran main.f90 -o main
-./main
+# Execution
+make          # Compiles and creates 'main' executable
+make clean    # Removes compiled files
+make rebuild  # Clean and recompile
+./main        # Runs the main program
+```
 
 ## Using the pipeline package
 1. main.f90 - runs all the Fortran scripts, cleans the previous folders
