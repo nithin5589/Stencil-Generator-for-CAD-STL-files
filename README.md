@@ -1,6 +1,6 @@
 # Stencil-Generator-for-CAD-STL-files
 
-A Fortran-based pipeline tool for generating 3D stencil grid points from STL (3D CAD model) files. This project processes STL files and gives the datasets for both 2D stencils and 3D stencil with proper classifications for Interior and Boundary points. This is beneficial for numerical implementation of simple PDEs as well as for advanced multi-physics problems for erosion modelling, especially for biodegradable polymeric materials.
+A Fortran-based pipeline tool for generating 3D stencil grid points from STL (3D CAD model) files. This project processes STL files and gives the datasets for both 2D stencils and 3D stencils with proper classifications for Interior and Boundary points. This is beneficial for numerical implementation of simple PDEs as well as for advanced multi-physics problems for erosion modelling, especially for biodegradable polymeric materials.
 
 ## Features
 
@@ -19,5 +19,10 @@ cd Stencil-Generator-for-CAD-STL-files
 # Compile
 make
 
-# Or compile with specific compiler
-make FC=gfortran
+# Or compile with a specific compiler
+make FC=gfortran main.f90 -o main
+./main
+
+## Using the pipeline package
+1. main.f90 - runs all the Fortran scripts, cleans the previous folders
+2. stlRead.f90 - reads the STL file to extract the Points & Connectivity List to the stlProc folder
