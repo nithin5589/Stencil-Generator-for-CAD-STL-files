@@ -28,7 +28,7 @@ program stlRead
     character(len=80) :: line
     real(8) :: x, y, z
     integer :: count, ii, jj
-    character(len=1000)::stlfolder, stlfile, filename, stlpoints
+    character(len=1000):: arg, stlfolder, stlfile, filename, stlpoints
     count = 0
     print *, "----------------------------------------------"
 
@@ -36,7 +36,13 @@ program stlRead
     !Open STL File
     !-----------------------------------------------------------------
     stlfolder = 'STL_Files/'
-    stlfile = 'Rectangle.STL' ! Add your STL CAD file here
+    ! Read stlfile file
+    if (command_argument_count() >= 1) then
+        call get_command_argument(1, arg)
+        stlfile = trim(arg)
+    else
+        stlfile = 'Rectangle.STL'  ! Default Case
+    end if
     filename = trim(stlfolder) // trim(stlfile)
     open(unit=10, file=filename, status='old', action='read')
 
