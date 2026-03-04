@@ -1,15 +1,11 @@
 module attachment
    implicit none
-   
 contains
    subroutine file_exist(filename, ans)
       character(len=*), intent(in) :: filename
       logical, intent(out) :: ans
-      
       inquire(file=filename, exist=ans)
-      
    end subroutine file_exist
-
 end module attachment
 
 program multiContourCheck2D
@@ -47,7 +43,7 @@ program multiContourCheck2D
    ! ----------------------------------------------------------------------------------
    ! STEP 2: All contour points at each Z-slice plane
    ! ----------------------------------------------------------------------------------
-   foldername = '2D_All_Points/'
+   foldername = 'src/2D_All_Points/'
    ! Process each z-plane
    do i = 1, size(zsliceplanes)
       d = zsliceplanes(i)
@@ -120,15 +116,12 @@ program multiContourCheck2D
    
    ! ----------------------------------------------------------------------------------
    ! STEP 3: Remove duplicate points from consolidated files
-   ! ----------------------------------------------------------------------------------
-   ! Create output directory
-   call system('mkdir -p 2D_All_Contour_Points')
-   
+   ! ----------------------------------------------------------------------------------  
    do i = 1, size(zsliceplanes)
       d = zsliceplanes(i)
       write(charP, "(F0.3)") d
       
-      fname = '2D_All_Contour_Points/ZSlicePlane_' // &
+      fname = 'src/2D_All_Contour_Points/ZSlicePlane_' // &
               trim(adjustl(charP)) // '.txt'
       
       ! Check if consolidated file exists
@@ -199,7 +192,7 @@ program multiContourCheck2D
       print *, "    Unique points after duplicate removal: ", kk
       
       ! Write unique points to final file
-      filename = '2D_All_Contour_Points/ZSlicePlane_' // &
+      filename = 'src/2D_All_Contour_Points/ZSlicePlane_' // &
                  trim(adjustl(charP)) // '.txt'
       
       open(unit=1924, file=filename, status='replace')
