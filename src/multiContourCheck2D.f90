@@ -51,7 +51,7 @@ program multiContourCheck2D
       print *, ""
       print *, "  Processing z-plane: ", d 
       ! Output for this Z-slice plane
-      fname = '2D_All_Contour_Points/ZSlicePlane_' // &
+      fname = 'src/2D_All_Contour_Points/ZSlicePlane_' // &
               trim(adjustl(charP)) // '.txt'
       open(unit=24, file=fname, status='replace')
       kctr = 1 ! All contours
