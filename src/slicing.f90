@@ -19,7 +19,7 @@ program slicing
     ! ----------------------------------------------------------------------------------
     num_columns = 3
     num_rows = 0
-    stlpoints = 'stlProc/'
+    stlpoints = 'src/stlProc/'
     open(unit=20, file=trim(stlpoints)//'Points.txt', status='old')
     do 
         read(20, '(A)', iostat=ios) line
