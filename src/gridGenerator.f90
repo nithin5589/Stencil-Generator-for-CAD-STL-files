@@ -245,7 +245,7 @@ program gridGenerator
                      n_inside_contour = n_inside_contour + 1
                      ! Write to individual contour file
                      filename = trim(output_folder) // &
-                                'inside_points_ZSlicePlane_' // &
+                                'ZSlicePlane_' // &
                                 trim(adjustl(z_str)) // '_Contour_' // &
                                 trim(adjustl(contour_str)) // '.txt'
                      
