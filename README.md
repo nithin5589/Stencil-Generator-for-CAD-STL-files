@@ -23,6 +23,40 @@ make rebuild  # Clean and recompile
 ./main        # Runs the main program
 ```
 
-## Using the pipeline package
-1. main.f90 - runs all the Fortran scripts, cleans the previous folders
-2. stlRead.f90 - reads the STL file to extract the Points & Connectivity List to the stlProc folder
+## Work Flow OVerview of the Pipeline
+1. **main.f90**  
+   - Primary driver script that executes all FORTRAN scripts in a systematic manner.  
+   - Declares input STL filename and spatial discretization parameters (`dx`, `dy`, `dz`).  
+
+2. **stlRead.f90**  
+   - Reads the STL file and extracts geometry information.  
+   - Outputs: Points list and connectivity list, stored in the `stlProc` folder.
+
+3. **slicing.f90**  
+   - Generates Z-direction slice planes based on the `dz` parameter.  
+   - Ensures coverage of the full height of the CAD geometry.  
+
+4. **parametricLineEquationCalculator.f90**  
+   - Computes intersections between STL facets and Z-slice planes.  
+   - Handles degenerate facets and special cases robustly.  
+   - Stores intersection points for each triangle edge in separate files.
+
+5. **sorting.f90**  
+   - Processes intersection points to create contours on each Z-slice plane.  
+   - Handles all contour types: distinct, intersecting, void, or nested contours.  
+
+6. **gridGenerator.f90**  
+   - Generates a 2D Cartesian stencil grid for each contour.
+
+7. **multiContourCheck2D.f90**  
+   - Resolves duplicate points from multiple contours at the same slice plane.  
+   - Ensures the uniqueness of stencil points for downstream calculations.  
+
+8. **IPandBP2D.f90**  
+   - Classifies 2D stencil points into **interior points (IP)** and **boundary points (BP)**.  
+   - Useful for planar simulations or numerical studies.  
+
+9. **stencilGenerator3D.f90**  
+   - Generates the final 3D stencil points by stacking 2D slices.  
+   - Classifies points as interior or boundary based on 3D criteria.  
+   - Outputs ready-to-use datasets for simulations: `Total_3D_points`, `Interior_3D_points`, and `Boundary_3D_points`.
