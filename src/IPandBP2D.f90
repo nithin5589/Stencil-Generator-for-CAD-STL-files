@@ -4,9 +4,7 @@ contains
    subroutine file_exist(filename, ans)
       character(len=*), intent(in) :: filename
       logical, intent(out) :: ans
-      
       inquire(file=filename, exist=ans)
-      
    end subroutine file_exist
 
    logical function find_neighbor(grid, target, n, tolerance)
@@ -101,18 +99,18 @@ program IPandBP2D
    ! ----------------------------------------------------------------------------------
    ! STEP 2: Open output directory
    ! ----------------------------------------------------------------------------------
-   fname = '2D_IP_BP_Data/IP_ZSlicePlane.txt'
+   fname = 'src/2D_IP_BP_Data/IP_ZSlicePlane.txt'
    open(unit=UNIT_INTERIOR, file=fname, status='replace')
    write(UNIT_INTERIOR, '(A)') '# Interior Points: x, y, z'
    
-   fname = '2D_IP_BP_Data/BP_ZSlicePlane.txt'
+   fname = 'src/2D_IP_BP_Data/BP_ZSlicePlane.txt'
    open(unit=UNIT_BOUNDARY, file=fname, status='replace')
    write(UNIT_BOUNDARY, '(A)') '# Boundary Points: x, y, z'
    
    ! ----------------------------------------------------------------------------------
    ! STEP 3: Process each z-plane
    ! ----------------------------------------------------------------------------------
-   foldername = '2D_All_Contour_Points/'
+   foldername = 'src/2D_All_Contour_Points/'
    do i = 1, size(zsliceplanes)
       d = zsliceplanes(i)
       write(charP, "(F0.3)") d
