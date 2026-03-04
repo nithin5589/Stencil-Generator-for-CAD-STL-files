@@ -5,60 +5,60 @@ program MainProgram
     ! -----------------------------------------------------------------------------------------------
     ! Delete Folders containing the previous data points and Recreate them
     ! -----------------------------------------------------------------------------------------------
-    ! Delete the folder named 'stlProc'
-    command = "rm -rf stlProc"
+    ! Delete the folder named 'src/stlProc'
+    command = "rm -rf src/stlProc"
     call system(command)
-    ! Create the folder named 'stlProc'
-    command = "mkdir stlProc"
-    call system(command)
-
-    ! Delete the folder named 'slicePlanes'
-    command = "rm -rf slicePlanes"
-    call system(command)
-    ! Create the folder named 'slicePlanes'
-    command = "mkdir slicePlanes"
+    ! Create the folder named 'src/stlProc'
+    command = "mkdir src/stlProc"
     call system(command)
 
-    ! Delete the folder named 'sorted'
-    command = "rm -rf sorted"
+    ! Delete the folder named 'src/slicePlanes'
+    command = "rm -rf src/slicePlanes"
     call system(command)
-    ! Create the folder named 'sorted'
-    command = "mkdir sorted"
-    call system(command)
-
-    ! Delete the folder named 'lineIntersections'
-    command = "rm -rf lineIntersections"
-    call system(command)
-    ! Create the folder named 'lineIntersections'
-    command = "mkdir lineIntersections"
+    ! Create the folder named 'src/slicePlanes'
+    command = "mkdir src/slicePlanes"
     call system(command)
 
-    ! Delete the folder named '2D_All_Points'
-    command = "rm -rf 2D_All_Points"
+    ! Delete the folder named 'src/sorted'
+    command = "rm -rf src/sorted"
     call system(command)
-    ! Create the folder named '2D_All_Points'
-    command = "mkdir 2D_All_Points"
-    call system(command)
-
-    ! Delete the folder named '2D_All_Contour_Points'
-    command = "rm -rf 2D_All_Contour_Points"
-    call system(command)
-    ! Create the folder named '2D_All_Contour_Points'
-    command = "mkdir 2D_All_Contour_Points"
+    ! Create the folder named 'src/sorted'
+    command = "mkdir src/sorted"
     call system(command)
 
-    ! Delete the folder named '2D_IP_BP_Data'
-    command = "rm -rf 2D_IP_BP_Data"
+    ! Delete the folder named 'src/lineIntersections'
+    command = "rm -rf src/lineIntersections"
     call system(command)
-    ! Create the folder named '2D_IP_BP_Data'
-    command = "mkdir 2D_IP_BP_Data"
+    ! Create the folder named 'src/lineIntersections'
+    command = "mkdir src/lineIntersections"
     call system(command)
 
-    ! Delete the folder named '3D_All_Points'
-    command = "rm -rf 3D_All_Points"
+    ! Delete the folder named 'src/2D_All_Points'
+    command = "rm -rf src/2D_All_Points"
     call system(command)
-    ! Create the folder named '3D_All_Points'
-    command = "mkdir 3D_All_Points"
+    ! Create the folder named 'src/2D_All_Points'
+    command = "mkdir src/2D_All_Points"
+    call system(command)
+
+    ! Delete the folder named 'src/2D_All_Contour_Points'
+    command = "rm -rf src/2D_All_Contour_Points"
+    call system(command)
+    ! Create the folder named 'src/2D_All_Contour_Points'
+    command = "mkdir src/2D_All_Contour_Points"
+    call system(command)
+
+    ! Delete the folder named 'src/2D_IP_BP_Data'
+    command = "rm -rf src/2D_IP_BP_Data"
+    call system(command)
+    ! Create the folder named 'src/2D_IP_BP_Data'
+    command = "mkdir src/2D_IP_BP_Data"
+    call system(command)
+
+    ! Delete the folder named 'src/3D_All_Points'
+    command = "rm -rf src/3D_All_Points"
+    call system(command)
+    ! Create the folder named 'src/3D_All_Points'
+    command = "mkdir src/3D_All_Points"
     call system(command)
 
     ! -----------------------------------------------------------------------------------------------
