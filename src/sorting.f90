@@ -62,7 +62,7 @@ program sorting
    ! ----------------------------------------------------------------------------------
    ! Read the Side1, Side2, Side3
    ! ----------------------------------------------------------------------------------
-   line_intersect_folder = 'lineIntersections/'
+   line_intersect_folder = 'src/lineIntersections/'
    call readSideFile(trim(line_intersect_folder)//'Side1.txt', PE1)
    call readSideFile(trim(line_intersect_folder)//'Side2.txt', PE2)
    call readSideFile(trim(line_intersect_folder)//'Side3.txt', PE3)
