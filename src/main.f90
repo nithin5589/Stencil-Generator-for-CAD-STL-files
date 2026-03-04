@@ -66,52 +66,52 @@ program MainProgram
     ! -----------------------------------------------------------------------------------------------
     ! Commands to run the codes in-order
     ! -----------------------------------------------------------------------------------------------
-    command = "gfortran stlRead.f90 -o stlRead"
+    command = "gfortran src/stlRead.f90 -o src/stlRead"
     call system(command)
 
-    command = "./stlRead Rectangle.STL"
+    command = "./src/stlRead Rectangle.STL"
     call system(command)
 
-    command = "gfortran slicing.f90 -o slicing"
+    command = "gfortran src/slicing.f90 -o src/slicing"
     call system(command)
 
-    command = "./slicing 1.000" ! Declare dz
+    command = "./src/slicing 1.000" ! Declare dz
     call system(command)
 
-    command = "gfortran parametricLineEquationCalculator.f90  -o  parametricLineEquationCalculator"
+    command = "gfortran src/parametricLineEquationCalculator.f90  -o  src/parametricLineEquationCalculator"
     call system(command)
 
-    command = "./parametricLineEquationCalculator"
+    command = "./src/parametricLineEquationCalculator"
     call system(command)
 
-    command = "gfortran sorting.f90 -o sorting"
+    command = "gfortran src/sorting.f90 -o src/sorting"
     call system(command)
 
-    command = "./sorting"
+    command = "./src/sorting"
     call system(command)
 
-    command = "gfortran gridGenerator.f90 -o gridGenerator"
+    command = "gfortran src/gridGenerator.f90 -o src/gridGenerator"
     call system(command)
 
-    command = "./gridGenerator 1.000 1.000" ! Declare dx, dy
+    command = "./src/gridGenerator 1.000 1.000" ! Declare dx, dy
     call system(command)
 
-    command = "gfortran multiContourCheck2D.f90 -o multiContourCheck2D"
+    command = "gfortran src/multiContourCheck2D.f90 -o src/multiContourCheck2D"
     call system(command)
 
-    command = "./multiContourCheck2D"
+    command = "./src/multiContourCheck2D"
     call system(command)
 
-    command = "gfortran IPandBP2D.f90 -o IPandBP2D"
+    command = "gfortran src/IPandBP2D.f90 -o src/IPandBP2D"
     call system(command)
 
-    command = "./IPandBP2D 1.000 1.000 1.000" ! Declare dx, dy, dz
+    command = "./src/IPandBP2D 1.000 1.000 1.000" ! Declare dx, dy, dz
     call system(command)
 
-    command = "gfortran stencilGenerator3D.f90 -o stencilGenerator3D"
+    command = "gfortran src/stencilGenerator3D.f90 -o src/stencilGenerator3D"
     call system(command)
 
-    command = "./stencilGenerator3D 1.000 1.000 1.000" ! Declare dx, dy, dz
+    command = "./src/stencilGenerator3D 1.000 1.000 1.000" ! Declare dx, dy, dz
     call system(command) 
     ! -----------------------------------------------------------------------------------------------
     
