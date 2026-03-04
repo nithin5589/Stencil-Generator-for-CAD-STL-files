@@ -35,7 +35,7 @@ program stlRead
     !-----------------------------------------------------------------
     !Open STL File
     !-----------------------------------------------------------------
-    stlfolder = 'STL_Files/'
+    stlfolder = 'src/STL_Files/'
     ! Read stlfile file
     if (command_argument_count() >= 1) then
         call get_command_argument(1, arg)
