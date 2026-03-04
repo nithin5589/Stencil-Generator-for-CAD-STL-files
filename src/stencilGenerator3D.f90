@@ -113,13 +113,11 @@ program stencilGenerator3D
    else
        dx = 1.000d0; dy = 1.000d0; dz = 0.500d0  ! Default
    end if
-   
-   
-   
+
    ! ----------------------------------------------------------------------------------
    ! STEP 1: Read z-slicing planes
    ! ----------------------------------------------------------------------------------
-   open(unit=UNIT_INPUT, file='slicePlanes/sliceplanes.txt', status='old')
+   open(unit=UNIT_INPUT, file='src/slicePlanes/sliceplanes.txt', status='old')
    
    num_rows = 0
    do
@@ -142,8 +140,8 @@ program stencilGenerator3D
    ! ----------------------------------------------------------------------------------
    ! STEP 2: Consolidate all points from all z-planes into single file
    ! ----------------------------------------------------------------------------------
-   foldername = '2D_All_Contour_Points/'
-   fname = '3D_All_Points/3D_All_Points.txt'
+   foldername = 'src/2D_All_Contour_Points/'
+   fname = 'src/3D_All_Points/3D_All_Points.txt'
    open(unit=UNIT_ALL, file=fname, status='replace')
    write(UNIT_ALL, '(A)') '# All 3D points from all z-planes'
    write(UNIT_ALL, '(A)') '# x, y, z'
@@ -229,11 +227,11 @@ program stencilGenerator3D
    ! STEP 4: Classify each point as interior or boundary
    ! ----------------------------------------------------------------------------------
    ! Open output files
-   fname = '3D_All_Points/IP_ZSlicePlane.txt'
+   fname = 'src/3D_All_Points/IP_ZSlicePlane.txt'
    open(unit=UNIT_INTERIOR, file=fname, status='replace')
    write(UNIT_INTERIOR, '(A)') '# 3D Interior Points: x, y, z'
    
-   fname = '3D_All_Points/BP_ZSlicePlane.txt'
+   fname = 'src/3D_All_Points/BP_ZSlicePlane.txt'
    open(unit=UNIT_BOUNDARY, file=fname, status='replace')
    write(UNIT_BOUNDARY, '(A)') '# 3D Boundary Points: x, y, z'
    
@@ -306,9 +304,9 @@ program stencilGenerator3D
    print *, "  Interior points: ", n_interior
    print *, "  Boundary points: ", n_boundary
    print *, "  Output files:"
-   print *, "    Total: 3D_All_Points/3D_All_Points.txt"
-   print *, "    Interior: 3D_All_Points/IP_ZSlicePlane.txt"
-   print *, "    Boundary: 3D_All_Points/BP_ZSlicePlane.txt"
+   print *, "    Total: src/3D_All_Points/3D_All_Points.txt"
+   print *, "    Interior: src/3D_All_Points/IP_ZSlicePlane.txt"
+   print *, "    Boundary: src/3D_All_Points/BP_ZSlicePlane.txt"
    print *, "=============================================="
    print *, "----------------------------------------------"
 
