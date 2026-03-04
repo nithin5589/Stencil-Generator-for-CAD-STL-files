@@ -84,7 +84,7 @@ program gridGenerator
    ! ----------------------------------------------------------------------------------
    ! Read the Z-slice planes
    ! ----------------------------------------------------------------------------------
-   open(unit=10, file='slicePlanes/sliceplanes.txt', status='old')
+   open(unit=10, file='src/slicePlanes/sliceplanes.txt', status='old')
    
    num_rows = 0
    do
