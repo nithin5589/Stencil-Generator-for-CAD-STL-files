@@ -1,8 +1,6 @@
 program slicing
     implicit none
-    real(8) :: dx, dy, dz
-    real(8) :: norm(3)
-    real(8) :: Zmin, Zmax, zinitial
+    real(8) :: dz, norm(3), Zmin, Zmax, zinitial
     real(8) :: tol
     real(8), allocatable :: P(:,:), zsliceplanes(:)
     integer :: num_rows, num_columns
@@ -11,14 +9,10 @@ program slicing
     tol = 1e-8
     print *, "----------------------------------------------"
     ! ----------------------------------------------------------------------------------
-    ! Read the Space Discretization parameters
+    ! Read the Space Discretization parameter dz
     ! ----------------------------------------------------------------------------------
-    ! Read dx, dy, dz
+    ! Read dz
     call get_command_argument(1, arg)
-    read(arg, *) dx
-    call get_command_argument(2, arg)
-    read(arg, *) dy
-    call get_command_argument(3, arg)
     read(arg, *) dz
     ! ----------------------------------------------------------------------------------
     ! Read the Points Data
