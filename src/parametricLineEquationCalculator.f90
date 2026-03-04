@@ -58,7 +58,7 @@ program parametricLineEquationCalculator
     ! ----------------------------------------------------------------------------------
     ! Read the z-slicingplanes
     ! ----------------------------------------------------------------------------------
-    zplanefolder = 'slicePlanes/'
+    zplanefolder = 'src/slicePlanes/'
     open(unit=10, file=trim(zplanefolder)//'sliceplanes.txt', status='old')
     num_rows = 0
     do 
@@ -78,7 +78,7 @@ program parametricLineEquationCalculator
     ! ----------------------------------------------------------------------------------
     ! Open Side1, Side2, Side3
     ! ----------------------------------------------------------------------------------
-    line_intersect_folder = 'lineIntersections/'
+    line_intersect_folder = 'src/lineIntersections/'
     open(unit=40, file=trim(line_intersect_folder)//'Side1.txt', status='replace')
     open(unit=50, file=trim(line_intersect_folder)//'Side2.txt', status='replace')
     open(unit=60, file=trim(line_intersect_folder)//'Side3.txt', status='replace')
