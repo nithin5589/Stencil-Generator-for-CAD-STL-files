@@ -106,7 +106,7 @@ program gridGenerator
    ! ----------------------------------------------------------------------------------
    ! Read the Points Data
    ! ----------------------------------------------------------------------------------
-   open(unit=30, file='stlProc/Points.txt', status='old')
+   open(unit=30, file='src/stlProc/Points.txt', status='old')
    
    num_rows = 0
    do
@@ -158,8 +158,8 @@ program gridGenerator
    ! ----------------------------------------------------------------------------------
    ! STEP 4: Process each z-plane and identify interior points
    ! ----------------------------------------------------------------------------------
-   contour_folder = 'sorted/'
-   output_folder = '2D_All_Points/'
+   contour_folder = 'src/sorted/'
+   output_folder = 'src/2D_All_Points/'
    
    n_inside_points = 0
    
