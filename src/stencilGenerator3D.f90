@@ -1,13 +1,10 @@
 module attachment
-   implicit none
-   
+   implicit none  
 contains
    subroutine file_exist(filename, ans)
       character(len=*), intent(in) :: filename
       logical, intent(out) :: ans
-      
       inquire(file=filename, exist=ans)
-      
    end subroutine file_exist
 
    subroutine sort_grid_3D(grid, n)
@@ -119,12 +116,9 @@ program stencilGenerator3D
    
    
    
-   !===========================================================================
+   ! ----------------------------------------------------------------------------------
    ! STEP 1: Read z-slicing planes
-   !===========================================================================
-   print *, ""
-   print *, "Step 1: Reading z-slice planes..."
-   
+   ! ----------------------------------------------------------------------------------
    open(unit=UNIT_INPUT, file='slicePlanes/sliceplanes.txt', status='old')
    
    num_rows = 0
@@ -145,9 +139,9 @@ program stencilGenerator3D
    print *, "  Number of z-planes: ", num_rows
    print *, "  Grid spacing: dx=", dx, " dy=", dy, " dz=", dz
    
-   !===========================================================================
+   ! ----------------------------------------------------------------------------------
    ! STEP 2: Consolidate all points from all z-planes into single file
-   !===========================================================================
+   ! ----------------------------------------------------------------------------------
    foldername = '2D_All_Contour_Points/'
    fname = '3D_All_Points/3D_All_Points.txt'
    open(unit=UNIT_ALL, file=fname, status='replace')
@@ -194,12 +188,9 @@ program stencilGenerator3D
    
    print *, "  Total points consolidated: ", num_rows
    
-   !===========================================================================
+   ! ----------------------------------------------------------------------------------
    ! STEP 3: Load all points into memory
-   !===========================================================================
-   print *, ""
-   print *, "Step 3: Loading all points into memory..."
-   
+   ! ----------------------------------------------------------------------------------
    open(unit=UNIT_ALL, file=fname, status='old')
    
    num_rows = 0
@@ -234,12 +225,9 @@ program stencilGenerator3D
 
    print *, "  Sorting complete"
    
-   !===========================================================================
+   ! ----------------------------------------------------------------------------------
    ! STEP 4: Classify each point as interior or boundary
-   !===========================================================================
-   print *, ""
-   print *, "Step 4: Classifying points (this may take a while)..."
-   
+   ! ----------------------------------------------------------------------------------
    ! Open output files
    fname = '3D_All_Points/IP_ZSlicePlane.txt'
    open(unit=UNIT_INTERIOR, file=fname, status='replace')
@@ -304,9 +292,9 @@ program stencilGenerator3D
       end if
    end do
    
-   !===========================================================================
+   ! ----------------------------------------------------------------------------------
    ! Cleanup
-   !===========================================================================
+   ! ----------------------------------------------------------------------------------
    close(UNIT_INTERIOR)
    close(UNIT_BOUNDARY)
    deallocate(grid, zsliceplanes)
