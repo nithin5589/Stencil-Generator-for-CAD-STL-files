@@ -78,7 +78,7 @@ program IPandBP2D
    ! ----------------------------------------------------------------------------------
    ! STEP 1: Read z-slicing planes
    ! ----------------------------------------------------------------------------------
-   open(unit=UNIT_INPUT, file='slicePlanes/sliceplanes.txt', status='old')
+   open(unit=UNIT_INPUT, file='src/slicePlanes/sliceplanes.txt', status='old')
    
    num_rows = 0
    do
