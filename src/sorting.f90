@@ -56,7 +56,7 @@ program sorting
    integer :: fid
    logical :: has_PE1, has_PE2, has_PE3, PE1eqPE2, PE2eqPE3, PE3eqPE1, foundNext
    tol = 1e-8
-   folder = 'sorted/'
+   folder = 'src/sorted/'
    print *, "----------------------------------------------"
 
    ! ----------------------------------------------------------------------------------
