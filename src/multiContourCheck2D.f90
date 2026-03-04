@@ -27,7 +27,7 @@ program multiContourCheck2D
    ! ----------------------------------------------------------------------------------
    ! STEP 1: Read z-slicing planes
    ! ----------------------------------------------------------------------------------
-   open(unit=10, file='slicePlanes/sliceplanes.txt', status='old')
+   open(unit=10, file='src/slicePlanes/sliceplanes.txt', status='old')
    num_rows = 0
    do
       read(10, '(A)', iostat=ios) line
