@@ -77,7 +77,7 @@ program stlRead
     rewind(10)
 
     ! Save Points.txt file
-    stlpoints='stlProc/'
+    stlpoints='src/stlProc/'
     open(unit=20, file=trim(stlpoints)//'Points.txt', status='replace')
     do i = 1, count - 1
         write(20, '(3(F20.8, F20.8, F20.8))') Points(i, 1), Points(i, 2), Points(i, 3)
