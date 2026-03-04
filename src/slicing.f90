@@ -61,7 +61,7 @@ program slicing
     end do
 
     ! Write the zsliceplanes to a .txt file
-    zplanefolder = 'slicePlanes/'
+    zplanefolder = 'src/slicePlanes/'
     open(unit=30, file=trim(zplanefolder)//'sliceplanes.txt', status='replace')
     do i = 1, size(zsliceplanes)
         write(30, '(1(F20.8))') zsliceplanes(i)
