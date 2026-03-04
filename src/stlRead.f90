@@ -123,7 +123,7 @@ program stlRead
     rewind(10)
 
     ! Save ConnectivityList.txt file
-    stlpoints='stlProc/'
+    stlpoints='src/stlProc/'
     open(unit=30, file=trim(stlpoints)//'ConnectivityList.txt', status='replace')
     do i = 1, size(ConnectivityList,1)
         write(30, '(3(F20.8, F20.8, F20.8))') ConnectivityList(i, 1), ConnectivityList(i, 2), ConnectivityList(i, 3)
